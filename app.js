@@ -2,6 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 const morgan = require('morgan');
+const port = process.env.PORT || 5000;
 
 let indexRouter = require('./routes/index');
 
@@ -28,7 +29,7 @@ app.use(morgan('dev'));
 var clients = 0;
 
 
-http.listen(3000, function() {
+http.listen(port, function() {
    console.log('listening on localhost:3000');
 });
 
