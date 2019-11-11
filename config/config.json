@@ -1,0 +1,26 @@
+{
+	"development": {
+		"username": "postgres",
+		"password": "postgres",
+		"database": "english_kids_talk",
+		"host": "127.0.0.1",
+		"dialect": "postgres",
+		"operatorsAliases": false
+	},
+	"test": {
+		"username": "postgres",
+		"password": "postgres",
+		"database": "english_kids_talk",
+		"host": "127.0.0.1",
+		"dialect": "postgres",
+		"operatorsAliases": false
+	},
+	"production": {
+		"username": "usndpqluwdpavs",
+		"password": "6db204432e8277a9b68f63eab3865ad585cce816b45a55bc765f833329aac164",
+		"database": "dc63emrrim3qa3",
+		"host": "ec2-54-221-225-11.compute-1.amazonaws.com",
+		"dialect": "postgres",
+		"operatorsAliases": false
+	}
+}
