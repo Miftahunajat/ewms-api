@@ -3,8 +3,13 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 const morgan = require('morgan');
 const port = process.env.PORT || 5000;
+const bodyParser = require('body-parser');
+
 
 let indexRouter = require('./routes/index');
+app.use(morgan('dev'))
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 io.on('connection', function(socket) {
    clients++;
@@ -18,9 +23,12 @@ app.get('/', function(req, res) {
    res.sendfile('index.html');
 });
 
-app.get('/update', function(req, res) {
+app.post('/update', function(req, res) {
    res.status(200).send()
-   io.sockets.emit('message',{ message: req.query.message});
+   var id = req.body.id
+   var lat = req.body.lat
+   var long = req.body.long
+   io.sockets.emit('message',{ message: id + lat + long});
 });
 
 

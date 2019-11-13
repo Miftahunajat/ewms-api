@@ -5,7 +5,7 @@
    </head>
    <script src = "/socket.io/socket.io.js"></script>
    <script>
-      var socket = io();
+      var socket = io("https://ewms-api.herokuapp.com/");
       socket.on('message',function(data) {
          document.body.innerHTML = '';
          document.write(data.message);
