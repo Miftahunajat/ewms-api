@@ -29,8 +29,8 @@ app.post('/update', function(req, res) {
    var lat = req.body.lat
    var long = req.body.long
    io.sockets.emit('message',{ message: id + lat + long});
+   console.log(req.body)
 });
-
 
 app.use(morgan('dev'));
 
