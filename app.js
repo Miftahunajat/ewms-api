@@ -28,9 +28,9 @@ app.post("/update", function(req, res) {
   res.status(200).send();
   var lat = req.body.lat;
   var lon = req.body.lon;
-  var wh = req.body.wh;
+  // var wh = req.body.wh;
   var id = req.body.id;
-  io.sockets.emit("message", { lat: lat, lon: lon, id: id, wh: wh });
+  io.sockets.emit("message", { lat: lat, lon: lon, id: id });
   console.log(req.body);
 });
 
